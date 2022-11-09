@@ -1,0 +1,74 @@
+ .container{
+     display: flex;
+     flex-direction: row;
+     margin-top: 30px;
+     margin-left: 400px;
+     margin-right: 500px;
+     margin-bottom: 10px;
+     width: 700px;
+     height: 90vh;
+     border-radius: 10px;
+     border: 1px solid rgb(124 124 124);
+     box-shadow: 1px 1px 1px 1px #cccbcb;
+ }
+ .mat-card-header{
+     width: 200px;
+     height: 200px;
+     font-size: 30px;
+    
+    
+ }
+ .mat-card-header-text{
+     padding-top: 35px;
+     padding-left: 35px;
+ }
+ .mat-card-title
+ {
+     padding: 5px;
+     span{
+         padding: 2px;
+     }
+ }
+ .register-text{
+     font-size: 20px;
+     padding-left: 35px;
+ }
+
+ .container-class{
+     display: flex;
+     flex-direction: column;
+     width: 50%;
+ }
+ .name-field
+ {
+     display: flex;
+     flex-direction: row;
+     gap: 5px;
+     padding-left: 35px;
+ }
+ .email-field {
+     display: flex;
+     flex-direction: row;
+     padding-left: 35px;
+     width: 410px;
+     mat-form-field{
+         width: 100%;
+     }
+   }
+.emailhint
+{
+    font-size: 14px;
+}
+.mat-card-actions{
+    padding-top: 50px;
+}
+.usemycurrentemail
+{
+    width: 400px;
+    font-size: 16px;
+    margin-top: 10px;
+    padding-left: 35px;
+}
+a{
+    text-decoration: none;
+}
