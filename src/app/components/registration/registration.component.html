@@ -1,6 +1,6 @@
 
 
-<div class="container">
+<div class="container" fxLayout="row" fxLayoutAlign="space-between center">
     <div class="header">
         <mat-card-header class="mat-card-header">
             <mat-card-title class="mat-card-title">
@@ -21,7 +21,7 @@
 
         <form>
             <div class="container-class">
-                <div class="name-field">
+                <div class="name-field" fxLayout="row" fxLayout.xs="column">
                     <mat-form-field floatLabel="auto" appearance="outline">
                         <mat-label>First Name</mat-label>
                         <input matInput name="first_name" type="text" required formControlName="first_name">
@@ -34,7 +34,7 @@
                         <mat-error>Last name is required</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="email-field">
+                <div class="email-field" fxLayout="row">
                     <mat-form-field floatLabel="auto" appearance="outline" class="email-mat-form-field">
                         <mat-label>Email</mat-label>
                         <input matInput name="email" type="email" required formControlName="email">
@@ -51,7 +51,7 @@
                     </mat-card-actions>
                 </div>
 
-                <div class="password-field">
+                <div class="password-field" fxLayout="row" fxLayout.xs="column">
                     <mat-form-field floatLabel="auto" appearance="outline">
                         <mat-label>Password</mat-label>
                         <input matInput name="password" type="password" required formControlName="password">
@@ -74,13 +74,13 @@
                     <mat-checkbox class="example-margin">Show Password</mat-checkbox>
                 </section>
             </div>
+            <mat-card-actions class="mat-card-actions">
+                <a href="" class="signininstead"> Sign in instead </a>
+                    <button mat-raised-button class="mat-raised-button">Next</button>
+            </mat-card-actions>
         </form>
                         
-        <mat-card-actions class="mat-card-actions">
-            <a href="" class="signininstead"> Sign in instead </a>
-    
-                <button mat-raised-button class="mat-raised-button">Next</button>
-        </mat-card-actions>
+
     </div>
 
     <div>
