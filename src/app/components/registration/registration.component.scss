@@ -149,3 +149,65 @@ a{
   .logohint{
     padding-left: 30px;
   }
+
+
+  @media screen and (min-width:220px)and (max-width:599px)
+  {
+    .container{
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+        margin-left: 10px;
+        margin-right: 10px;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        border: 1px solid rgb(230 230 230);
+        box-shadow: 1px 1px 1px 1px #f4f4f4;
+     }
+     .mat-form-field-subscript-wrapper
+     {
+        padding: 4px;
+     }
+
+     .password-field
+    {
+        display: flex;
+        flex-direction: column;
+        padding-left: 35px;
+        margin-top: 0px;
+        width: 100%;
+    }
+    .usemycurrentemail
+{
+    width:400px;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: -10px!important;
+    padding-left: -10px!important;
+    
+}
+.email-field {
+    display: flex;
+    justify-content: center;
+    padding-left: 35px;
+    width: 100%;
+  }
+
+  .mat-raised-button{
+    background-color: #1a73e8;
+    color: white;
+    padding-left: 0;
+    padding-right: 0px;
+    margin-left: 125px;
+    margin-bottom: 15px;
+  }
+  .mat-card-actions{
+    display: flex;
+    justify-content:center;
+    margin-left: 13px;
+    margin-right: 13px;
+    padding-left: 35px;
+  
+  }
+  }

@@ -54,8 +54,8 @@
                 <div class="password-field" fxLayout="row" fxLayout.xs="column">
                     <mat-form-field floatLabel="auto" appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input matInput name="password" type="password" required formControlName="password">
-                        <mat-hint class="passwordhint">Use 8 or more characters with a mix of letters, numbers & symbols
+                        <input class="inputbutton" matInput name="password" type="password" required formControlName="password">
+                        <mat-hint class="passwordhint" fxHide.xs>Use 8 or more characters with a mix of letters, numbers & symbols
                         </mat-hint>
                         <mat-error>First name is required</mat-error>
                     </mat-form-field>
@@ -82,8 +82,8 @@
 
     </div>
 
-    <div>
-        <img src="../../../assets/accounts.JPG" class="sideimage" alt=""><br>
+    <div fxHide.xs>
+        <img src="../../../assets/accounts.JPG" class="sideimage" alt="" > <br>
         <mat-hint class="logohint">One account. All of Google working for you.</mat-hint>
     </div>
 </div>
