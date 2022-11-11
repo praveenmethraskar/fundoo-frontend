@@ -9,6 +9,8 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -38,7 +40,8 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
     MatButtonModule,
     MatCheckboxModule,
     MatDividerModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

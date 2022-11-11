@@ -19,18 +19,18 @@
             </div>
         </mat-card-header>
 
-        <form>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="container-class">
                 <div class="name-field" fxLayout="row" fxLayout.xs="column">
                     <mat-form-field floatLabel="auto" appearance="outline">
                         <mat-label>First Name</mat-label>
-                        <input matInput name="first_name" type="text" required formControlName="first_name">
-                        <mat-error>First name is required</mat-error>
+                        <input matInput name="first_name" type="text" required formControlName="firstName">
+                        <mat-error>Enter Valid Email</mat-error>
                     </mat-form-field>
 
                     <mat-form-field floatLabel="auto" appearance="outline">
                         <mat-label>Last Name</mat-label>
-                        <input matInput name="last_name" type="text" required formControlName="last_name">
+                        <input matInput name="last_name" type="text" required formControlName="lastName">
                         <mat-error>Last name is required</mat-error>
                     </mat-form-field>
                 </div>
@@ -62,8 +62,7 @@
 
                     <mat-form-field floatLabel="auto" appearance="outline">
                         <mat-label>Confirm</mat-label>
-                        <input matInput name="confirmpassword" type="password" required
-                            formControlName="confirmpassword">
+                        <input matInput name="confirmpassword" type="password" required formControlName="confirmPassword">
                         <mat-hint class="passwordhint">Use 8 or more characters with a mix of letters, numbers & symbols
                         </mat-hint>
                         <mat-error>Last name is required</mat-error>
