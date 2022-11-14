@@ -21,10 +21,16 @@ export class UserService {
 
     return this.httpService.postService('User/Login',reqdata,false,header);
   }
-  Regitration(){
+
+  Registration(reqdata:any){
 
     let header = {
-      
+      header:new HttpHeaders({
+        'Content-type':'application/json',
+        //'Authorisation':'token'
+      })
     }
+    return this.httpService.postService('User/Registration',reqdata,false,header);
   }
+
 }
