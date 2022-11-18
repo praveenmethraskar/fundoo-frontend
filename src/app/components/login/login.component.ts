@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
                 localStorage.setItem("token",response.data);
               })
           }
+          
       }
 
 }

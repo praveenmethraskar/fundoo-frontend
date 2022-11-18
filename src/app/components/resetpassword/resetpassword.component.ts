@@ -30,12 +30,12 @@ export class ResetpasswordComponent implements OnInit {
       // convenience getter for easy access to form fields
       get f() { return this.resetForm.controls; }
 
-      onSubmit() {
+      onSubmit() { 
           this.submitted = true;
   
           // stop here if form is invalid
           if (this.resetForm.valid) {
-            let payload = {
+            let payload = { 
               newPassword: this.resetForm.value.password,
               confirmPassword: this.resetForm.value.confirmpassword,
               service:'advance'
@@ -44,7 +44,7 @@ export class ResetpasswordComponent implements OnInit {
   
             this.user.Reset(payload,this.token).subscribe((response:any) =>{
               console.log('password response',response);
-              localStorage.setItem("token",response.data);
+              //localStorage.setItem("token",response.data);
             })
           }
       }

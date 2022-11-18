@@ -1,0 +1,85 @@
+<!-- <mat-accordion>
+    <mat-expansion-panel hideToggle >
+      <mat-expansion-panel-header>
+        <mat-panel-title >
+          <p><input type="text" name="" id=""class="note-text" placeholder="Title"></p>  
+        </mat-panel-title>
+        <mat-panel-description>
+            <div class="iconstag1"><a href="#" ><img src="../../../assets/icons/checkbox.png" alt="" height="25px" ></a>  </div>
+            <div class="iconstag2"> <a href="#"><img src="../../../assets/icons/brush.png" alt="" height="25px" ></a></div>
+            <div class="iconstag3"><a href="#"><img src="../../../assets/icons/image.png" alt="" height="25px" ></a> </div>
+          
+
+        </mat-panel-description>
+      </mat-expansion-panel-header>   
+      
+      <p><input type="text" name="" id=""class="note-text" placeholder="Take a note"></p>
+      
+        
+        <div class="iconimg4">
+            <a href="#" ><img src="../../../assets/icons/reminder.svg" alt="" height="25px" ></a>
+            <a href="#"><img src="../../../assets/icons/collabrator.svg" alt="" height="25px" ></a>
+            <a href="#"><img src="../../../assets/icons/backgrouncolor.svg" alt="" height="25px"></a> 
+            <a href="#"><img src="../../../assets/icons/image.svg" alt="" height="25px"></a> 
+            <a href="#"><img src="../../../assets/icons/archive.svg" alt="" height="25px"></a> 
+            <a href="#"><img src="../../../assets/icons/more.svg" alt="" height="25px"></a> 
+            <a href="#"><img src="../../../assets/icons/undo.svg" alt="" height="25px"></a> 
+            <a href="#"><img src="../../../assets/icons/redo.svg" alt="" height="25px"></a> 
+           
+           <div class="noteclose">
+            <a href="#" >Close</a>
+           </div> 
+        </div>
+
+    
+    </mat-expansion-panel>
+
+  </mat-accordion> -->
+
+
+<div fxFlex=100 fxLayout="column" fxLayoutAlign="center center">
+
+  <div class="takeAnote">
+    <form [formGroup]="notesForm" (ngSubmit)="onSubmit()">
+    <div class="titleInputSection" (click)="hideAndShow()" *ngIf="show || !show">
+      <input placeholder="Title" class="titleInput" formControlName="title">
+      <div class="titleImgSection">
+        <div *ngIf="titleImgOne">
+          <a class="iconstag1"> <img src="../../../assets/icons/checkbox.png" height="25px"> </a>
+          <a class="iconstag2"> <img src="../../../assets/icons/brush.png" height="25px"> </a>
+          <a class="iconstag3"> <img src="../../../assets/icons/image.svg" height="25px"> </a>
+        </div>
+        <span *ngIf="titleImgTwo">
+          <a> <img src="../../../assets/icons/pin.svg"> </a>
+        </span>
+      </div>
+    </div>
+
+    <div *ngIf="show">
+      <div appearance="fill">
+        <textarea matInput placeholder="Take a note" class="noteDescription" formControlName="discription"></textarea>
+      </div>
+
+      <div style="display: flex;">
+
+        <div class="iconimg4">
+          <a href="#"><img src="../../../assets/icons/reminder.svg" alt="" height="25px"></a>
+          <a href="#"><img src="../../../assets/icons/collabrator.svg" alt="" height="25px"></a>
+          <a href="#"><img src="../../../assets/icons/backgrouncolor.svg" alt="" height="25px"></a>
+          <a href="#"><img src="../../../assets/icons/image.svg" alt="" height="25px"></a>
+          <a href="#"><img src="../../../assets/icons/archive.svg" alt="" height="25px"></a>
+          <a href="#"><img src="../../../assets/icons/more.svg" alt="" height="25px"></a>
+          <a href="#"><img src="../../../assets/icons/undo.svg" alt="" height="25px"></a>
+          <a href="#"><img src="../../../assets/icons/redo.svg" alt="" height="25px"></a>
+
+        </div>
+        <div style="margin-left: auto;">
+          <button mat-button class="closebutton">Close</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>

@@ -11,7 +11,11 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDividerModule} from '@angular/material/divider';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -21,6 +25,10 @@ import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NotesComponent } from './components/notes/notes.component';
+import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
+import { GetallnotesComponent } from './components/getallnotes/getallnotes.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +36,11 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
     RegistrationComponent,
     LoginComponent,
     ForgotpasswordComponent,
-    ResetpasswordComponent
+    ResetpasswordComponent,
+    DashboardComponent,
+    NotesComponent,
+    DisplaynotesComponent,
+    GetallnotesComponent
     
   ],
   imports: [
@@ -43,7 +55,13 @@ import { ResetpasswordComponent } from './components/resetpassword/resetpassword
     MatDividerModule,
     FlexLayoutModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule,
+    MatExpansionModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

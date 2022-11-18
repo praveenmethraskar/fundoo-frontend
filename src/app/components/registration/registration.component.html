@@ -22,7 +22,7 @@
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="container-class">
                 <div class="name-field" fxLayout="row" fxLayout.xs="column">
-                    <mat-form-field floatLabel="auto" appearance="outline">
+                  <mat-form-field floatLabel="auto" appearance="outline">
                         <mat-label>First Name</mat-label>
                         <input matInput name="first_name" type="text" required formControlName="firstName">
                         <mat-error>First Name is required</mat-error>

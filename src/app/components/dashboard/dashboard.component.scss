@@ -1,0 +1,107 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+  
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+
+.sidenav-container {
+
+  flex: 1;
+  height: 550px;
+  overflow-y: hidden;
+}
+
+.example-is-mobile .sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.mat-toolbar.mat-primary{
+  background: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+button[type="submit"]:focus,
+input[type="search"]:focus {
+  box-shadow: 0 0 3px 0 #c2c8cc;
+  border-color: #8b959c;
+  outline: none;
+  border-radius: 5px;
+}
+
+form.nosubmit {
+  border: none;
+  padding: 0;
+  margin-left: -4%;
+}
+
+input.nosubmit {
+  border-radius: 12px;
+  margin-left: 25%;
+  height: 10%;
+  width: 590px;
+  border: 1px solid rgb(194, 189, 189);
+  display: block;
+  padding: 15px 16px 18px 80px;
+  background-color: #ebebeb8a!important;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+
+}
+
+input.nosubmit:hover {
+  border-radius: 12px;
+  margin-left: 25%;
+  height: 10%;
+  width: 590px;
+  border: 1px solid rgb(194, 189, 189);
+  display: block;
+  padding: 15px 16px 18px 80px;
+  background-color: #fff!important;
+  background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+  box-shadow: 0px 0px 10px 0px #c4c4c4;
+}
+.thirddiv{
+
+  margin-left : 18%;
+ // margin-top: -1%;
+}
+.appprofileimage{
+  margin-left : 5%;
+}
+
+.keepimage{
+  margin-left: 1%;
+
+}
+.menuimage{
+margin-left: 1%;
+}
+
+.sidenavimage{
+
+  margin-left: 2%;
+  margin-top: 10px;
+}
+.note1{
+margin-top:10px;
+
+}
+.noteimg{
+  margin-left: 20px;
+}

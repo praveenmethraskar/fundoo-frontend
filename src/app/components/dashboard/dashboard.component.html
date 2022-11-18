@@ -1,0 +1,80 @@
+<div class="container">
+    <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+        <mat-toolbar color="primary" class="example-toolbar">
+            <button mat-icon-button (click)="snav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+
+            <div class="keepimage">
+                <img src="../../../assets/icons/keep.png" alt="">
+            </div>
+            <h1 class="example-app-name">Fundoo App</h1>
+
+            <div class="nosubmit">
+                <input class="nosubmit" type="search" placeholder="Search...">
+            </div>
+
+            <div class="thirddiv" fxLayout="row" fxLayoutGap="20px">
+                <div>
+                    <img type="image" src="../../../assets/icons/refreshing.png" height="26px" width="26px">
+                </div>
+                <div>
+                    <img type="image" src="../../../assets/icons/listing.png" height="26px" width="26px">
+                </div>
+                <div>
+                    <img type="image" src="../../../assets/icons/settings.png" height="26px" width="26px">
+                </div>
+            </div>
+            <div class="appprofileimage" fxLayout="row" fxLayoutGap="30px">
+                <img type="image" src="../../../assets/icons/app.png" height="30px" width="30px">
+
+                <img type="image" src="../../../assets/icons/profile.png" height="28px" width="28px">
+            </div>
+
+
+        </mat-toolbar>
+
+
+
+        <div class="menu" fxLayout="row" fxLayoutGap="20px">
+            <div class="note1" fxLayout="column" fxLayoutGap="20px">
+                <a href=""> <img class="noteimg" type="image" src="../../../assets/icons/lightbulb.svg" height="28px"
+                        width="28px"></a>
+
+                <a href=""><img class="noteimg" type="image" src="../../../assets/icons/notification.png" height="28px"
+                        width="28px"> </a>
+
+                <a href=""><img class="noteimg" type="image" src="../../../assets/icons/edit.svg" height="28px"
+                        width="28px"> </a>
+
+                <a href=""><img class="noteimg" type="image" src="../../../assets/icons/archive.svg" height="28px"
+                        width="28px"> </a>
+
+                <a href=""><img class="noteimg" type="image" src="../../../assets/icons/delete.svg" height="28px"
+                        width="28px"> </a>
+            </div>
+            <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+                <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'"
+                    [fixedInViewport]="mobileQuery.matches" fixedTopGap="56">
+                    <mat-nav-list>
+
+                        <mat-list role="list">
+                            <mat-list-item role="listitem"> Notes</mat-list-item>
+                            <mat-list-item role="listitem">reminder</mat-list-item>
+                            <mat-list-item role="listitem">edit</mat-list-item>
+                            <mat-list-item role="listitem">archive</mat-list-item>
+                            <mat-list-item role="listitem">trash</mat-list-item>
+                        </mat-list>
+                    </mat-nav-list>
+                </mat-sidenav>
+
+                <router-outlet></router-outlet>
+            </mat-sidenav-container>
+
+        </div>
+
+    </div>
+
+
+
+</div>

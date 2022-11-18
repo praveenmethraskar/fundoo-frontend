@@ -23,7 +23,7 @@ export class HttpService {
     return this.httpclient.put(this.baseUrl+url,reqdata,token && httpOptions);
   }
   deleteService(){
-
+ 
   }
   patchService(){
 

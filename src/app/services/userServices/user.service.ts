@@ -52,10 +52,10 @@ export class UserService {
     let header = {
       header:new HttpHeaders({
         'Content-type':'application/json',
-        'Authorisation':this.token
+        'Authorization':token
       })
     }
-    return this.httpService.putService('User/ResetPassword?newPassword='+(reqdata.newPassword)+'&confirmPassword='+(reqdata.confirmPassword),reqdata,true,header);
+    return this.httpService.putService(`User/ResetPassword?newPassword=${reqdata.newPassword}&confirmPassword=${reqdata.confirmPassword}`,reqdata,true,header);
   }
 
 }
