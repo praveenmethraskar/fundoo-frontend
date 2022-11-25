@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { NoteserviceService } from 'src/app/services/notesServices/noteservice.service';
 
-
 @Component({
-  selector: 'app-getallnotes',
-  templateUrl: './getallnotes.component.html',
-  styleUrls: ['./getallnotes.component.scss']
+  selector: 'app-archieve',
+  templateUrl: './archieve.component.html',
+  styleUrls: ['./archieve.component.scss']
 })
-export class GetallnotesComponent implements OnInit {
+export class ArchieveComponent implements OnInit {
 
   token:any;
   notesArray:any;
@@ -31,5 +30,6 @@ export class GetallnotesComponent implements OnInit {
 
     })
   }
+  
 
 }

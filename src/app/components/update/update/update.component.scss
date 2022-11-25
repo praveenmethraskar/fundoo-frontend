@@ -69,30 +69,13 @@ color: #000;
 mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([aria-disabled=true]){
   background-color: #fff;
 }
-.container-box{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
 
-}
- /* Column Gap */
- .container-box > * {
-  box-sizing: border-box;
-}
-.container-box > *:not(:last-child) {
-  margin-right: 32px;
-}
-.cardListItem {
-  flex: 0 1 calc(20.3% - 32px);
-}
 .takeAnote {
-  margin: auto;
-  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
-  border-radius: 8px;
-  background: #fff;
-  margin: 40px;
-  padding: 5px 5px 5px 5px;
+    width: 100%;
+    margin: auto;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;    
+    border-radius: 8px;
+    background: #fff;
 }
 .takeAnote textarea { width: 100%; }
 
@@ -104,7 +87,7 @@ textarea {
 
 .takeAnote .titleInput {
     padding: 14px 16px 12px 16px;
-    height: 48px;
+    height: 100px;
     font-size: 1rem;
     font-weight: 500;
     color: #202124;
@@ -112,9 +95,14 @@ textarea {
     outline: none;
     border: none;
     border-radius: 8px;
+    width:500px;
 }
+.dialog-container {
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
 .takeAnote .noteDescription {
-
     box-sizing: border-box;
     outline: none; 
     border: none;

@@ -29,6 +29,16 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NotesComponent } from './components/notes/notes.component';
 import { DisplaynotesComponent } from './components/displaynotes/displaynotes.component';
 import { GetallnotesComponent } from './components/getallnotes/getallnotes.component';
+import { AuthguardServiceService } from './services/authguardService/authguard-service.service';
+import { IconsComponent } from './components/icons/icons/icons.component';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
+import { UpdateComponent } from './components/update/update/update.component';
+import {FormsModule} from '@angular/forms';
+import { TrashComponent } from './components/trash/trash/trash.component';
+import { ArchieveComponent } from './components/archieve/archieve/archieve.component';
+import {CdkMenuModule} from '@angular/cdk/menu';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +50,11 @@ import { GetallnotesComponent } from './components/getallnotes/getallnotes.compo
     DashboardComponent,
     NotesComponent,
     DisplaynotesComponent,
-    GetallnotesComponent
+    GetallnotesComponent,
+    IconsComponent,
+    UpdateComponent,
+    TrashComponent,
+    ArchieveComponent,
     
   ],
   imports: [
@@ -60,10 +74,16 @@ import { GetallnotesComponent } from './components/getallnotes/getallnotes.compo
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatMenuModule,
+    MatDialogModule,
+    FormsModule,
+    CdkMenuModule
     
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

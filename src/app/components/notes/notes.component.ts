@@ -8,7 +8,7 @@ import { NoteserviceService } from 'src/app/services/notesServices/noteservice.s
   styleUrls: ['./notes.component.scss']
 })
 export class NotesComponent implements OnInit {
-  panelOpenState = false;
+  panelOpenState = false; 
   show = false;
   notesForm!: FormGroup;
 
@@ -41,8 +41,8 @@ export class NotesComponent implements OnInit {
         title:this.notesForm.value.title,
         desciption:this.notesForm.value.discription
         //service:'advance'
-      }
-      console.log(data,);
+      } 
+      console.log(data);
       this.notes.Notes(data).subscribe((response:any) =>{
         console.log(response);
       })
@@ -61,10 +61,9 @@ export class NotesComponent implements OnInit {
     this.titleImgOne = false;
     this.titleImgTwo = true;
   } 
+ 
 
-  close(){
 
-  }
 
 
 

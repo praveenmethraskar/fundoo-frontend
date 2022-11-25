@@ -1,0 +1,23 @@
+<div fxFlex=100 fxLayout="column" fxLayoutAlign="center center" class="dialog-container"> 
+
+    <div class="takeAnote">
+     
+            <div class="titleInputSection">
+                <input matInput [(ngModel)]="title" value="{{title}}" class="titleInput"  >
+                 <p></p>
+            </div>
+
+            <div>
+                <div appearance="fill">
+                    <textarea matInput  [(ngModel)]="description" value="{{description}}" placeholder="Take a note" class="noteDescription"
+                        ></textarea>
+                </div>
+                <app-icons></app-icons>
+                <div style="display: flex;">
+                    <div style="margin-left: auto;">
+                        <button mat-button mat-dialog-close class="closebutton" (click)="closeDialog()" >Close</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>

@@ -14,7 +14,7 @@ export class ResetpasswordComponent implements OnInit {
   token: any;
 
   constructor(private formBuilder: FormBuilder, private user:UserService, private activeRoute: ActivatedRoute) {
-    
+      
    }
 
   ngOnInit(): void {
