@@ -23,6 +23,7 @@ export class NotesComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private notes:NoteserviceService) { 
     this.token = localStorage.getItem('token');
   }
+  @Output() displaytogetallnotes=new EventEmitter<string>();
 
   ngOnInit(): void {
     this.notesForm = this.formBuilder.group({
@@ -45,6 +46,7 @@ export class NotesComponent implements OnInit {
       console.log(data);
       this.notes.Notes(data).subscribe((response:any) =>{
         console.log(response);
+        this.displaytogetallnotes.emit(response)
       })
     }
 

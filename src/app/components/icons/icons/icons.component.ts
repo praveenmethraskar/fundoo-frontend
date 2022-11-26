@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { outputAst } from '@angular/compiler';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { NoteserviceService } from 'src/app/services/notesServices/noteservice.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { NoteserviceService } from 'src/app/services/notesServices/noteservice.s
 })
 export class IconsComponent implements OnInit {
   @Input() notesCard: any;
+  @Output() iconstodisplay = new EventEmitter<string>()
   data: any;
   noteid: any;
   isArchived: boolean = false;
@@ -57,6 +59,8 @@ export class IconsComponent implements OnInit {
     console.log(data);
     this.notes.trashnotes(data).subscribe((response: any) => {
       console.log(response);
+      this.iconstodisplay.emit(response);
+      
     })
   }
   archieve() {
@@ -66,6 +70,7 @@ export class IconsComponent implements OnInit {
     console.log(data);
     this.notes.archievenote(data).subscribe((response: any) => {
       console.log(response);
+      this.iconstodisplay.emit(response);
     })
   }
 

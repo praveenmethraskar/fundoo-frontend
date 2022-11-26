@@ -28,8 +28,17 @@ export class GetallnotesComponent implements OnInit {
       console.log("request data", request);
       this.notesArray = request.data;
       console.log(this.notesArray);
-
+      this.notesArray.reverse();
+      this.notesArray = this.notesArray.filter((notedata:any)=>{
+        return notedata.trash === false && notedata.archive ===false;
+      })
     })
   }
 
+  receiveMessagefromdisplaycard($event: any) {
+    console.log("insidegetallnotes", $event);
+    this.getAllNotes()
+  }
+
+  
 }

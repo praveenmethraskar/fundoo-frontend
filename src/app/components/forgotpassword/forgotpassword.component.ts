@@ -31,7 +31,7 @@ export class ForgotpasswordComponent implements OnInit {
           if (this.forgotForm.valid) {
             let payload = {
               email: this.forgotForm.value.email,
-              service:'advance'
+              //service:'advance'
             }
             console.log(payload);
             this.user.ForgetPassword(payload).subscribe((response:any)=>{

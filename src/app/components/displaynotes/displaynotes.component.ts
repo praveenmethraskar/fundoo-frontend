@@ -20,11 +20,15 @@ export class DisplaynotesComponent implements OnInit {
   titleImgTwo = false;
   title: any;
   description: any;
+  msg: any;
+ 
 
   constructor(public dialog: MatDialog) { }
 
 
   @Input() NotesList: any;
+  @Output() displaytogetallnotes=new EventEmitter<string>();
+  
 
   ngOnInit(): void {
   }
@@ -37,8 +41,16 @@ export class DisplaynotesComponent implements OnInit {
     });
     dialogReff.afterClosed().subscribe(result => {
       console.log('the dialog closed', result);
+      
     })
   }
+
+  recievefromiconstodisplaycard($event: any) {
+    console.log("recievedindisplay", $event);
+    this.msg = $event
+    this.displaytogetallnotes.emit(this.msg)
+  }
+
 
 }
 

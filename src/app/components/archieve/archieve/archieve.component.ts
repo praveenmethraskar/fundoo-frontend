@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NoteserviceService } from 'src/app/services/notesServices/noteservice.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { NoteserviceService } from 'src/app/services/notesServices/noteservice.s
 })
 export class ArchieveComponent implements OnInit {
 
+  @Output() displaytogetallnotes=new EventEmitter<string>();
+  
   token:any;
   notesArray:any;
   noteData:any;
@@ -27,8 +29,15 @@ export class ArchieveComponent implements OnInit {
       console.log("request data", request);
       this.notesArray = request.data;
       console.log(this.notesArray);
-
+      this.notesArray = this.notesArray.filter((notedata:any)=>{
+        return notedata.archive ===false;
+      })
     })
+  }
+
+  receiveMessagefromdisplaycard($event: any) {
+    console.log("insidegetallnotes", $event);
+    this.getAllNotes()
   }
   
 

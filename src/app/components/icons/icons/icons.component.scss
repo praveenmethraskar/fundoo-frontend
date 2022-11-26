@@ -2,27 +2,21 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 100%;
+    width: 260px;
   }
 
   .horiz{
     display: flex;
     flex-wrap: wrap;
-    flex-direction: row;
-    background-color: white;
-    max-width: 275px;
-    width: 400px;
-    text-decoration:center;
-    overflow-x: hidden;
+    /* flex-direction: row; */
+    background: white;
+    max-width: 280px;
+    width: 280px;
+    -webkit-text-decoration: center;
+    text-decoration: center;
 
   }
-  .horiz button{
-    border-radius: 12px;
-    width: 10px;
-    height: 20px;
-    margin: 1px 0px 0px 0px;
-    
-  }
+ 
 
 
   .example-menu-bar-item {
@@ -99,3 +93,14 @@
   .example-menu-item[aria-expanded='true'] {
     background-color: rgb(208, 208, 208) !important;
   }
+
+  @media screen and (min-width: 300px) and (max-width: 500px) {
+
+    .iconimg4 {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      width: 136px;
+      margin-left: 10px;
+    }
+    }

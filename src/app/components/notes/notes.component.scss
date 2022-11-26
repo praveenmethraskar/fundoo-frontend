@@ -136,4 +136,40 @@ textarea {
     }
     .takeAnote {width: 85%;}
     .closebutton {padding-top: 10px;}
+    .titleImgSection img {
+      opacity: 0.54;
+      margin: 0 0px;
+      padding: 0px;
+      cursor: pointer;
+    }
+}
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+
+  .titleImgSection img {
+    opacity: 0.54;
+    margin: 0 0px;
+    padding: 0px;
+    cursor: pointer;
+  }
+}
+@media screen and (min-width: 300px) and (max-width: 500px) {
+
+
+.takeAnote {
+  width: 80%;
+  box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+  border-radius: 8px;
+  background: #fff;
+  margin-top: 116px;
+  margin-left: 20px;
+}
+.titleImgSection img {
+  opacity: 0.54;
+  margin: 0 0px;
+  padding: 0px;
+  cursor: pointer;
+}
+.closebutton {
+  padding: 0;
+}
 }

@@ -18,6 +18,8 @@ export class ResetpasswordComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.token = this.activeRoute.snapshot.paramMap.get('token')
+    
     this.resetForm = this.formBuilder.group({
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmpassword: ['', [Validators.required, Validators.minLength(6)]],
@@ -38,7 +40,7 @@ export class ResetpasswordComponent implements OnInit {
             let payload = { 
               newPassword: this.resetForm.value.password,
               confirmPassword: this.resetForm.value.confirmpassword,
-              service:'advance'
+              //service:'advance'
             }
             console.log(payload)
   

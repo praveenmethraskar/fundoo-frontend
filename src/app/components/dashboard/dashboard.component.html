@@ -11,12 +11,12 @@
             <h1 class="example-app-name">Fundoo App</h1>
 
             <div class="nosubmit">
-                <input class="nosubmit" type="search" placeholder="Search...">
+                <input class="nosubmit" type="search" placeholder="Search..." >
             </div>
 
             <div class="thirddiv" fxLayout="row" fxLayoutGap="20px">
-                <div>
-                    <img type="image" src="../../../assets/icons/refreshing.png" height="26px" width="26px">
+                <div >
+                   <a href="javascript:void()" (click)="refresh()"> <img type="image" src="../../../assets/icons/refreshing.png" height="26px" width="26px"></a>
                 </div>
                 <div>
                     <img type="image" src="../../../assets/icons/listing.png" height="26px" width="26px">
@@ -28,7 +28,10 @@
             <div class="appprofileimage" fxLayout="row" fxLayoutGap="30px">
                 <img type="image" src="../../../assets/icons/app.png" height="30px" width="30px">
 
-                <img type="image" src="../../../assets/icons/profile.png" height="28px" width="28px">
+                <img type="image" src="../../../assets/icons/profile.png" height="28px" width="28px" [matMenuTriggerFor]="menu">
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item (click)="OnLogout()">Logout</button>
+                  </mat-menu>
             </div>
 
 
@@ -38,19 +41,19 @@
 
         <div class="menu" fxLayout="row" fxLayoutGap="20px">
             <div class="note1" fxLayout="column" fxLayoutGap="20px">
-                <a href="" > <img class="noteimg" type="image" src="../../../assets/icons/lightbulb.svg" height="28px"
+                <a routerLink="./notes"> <img class="noteimg" type="image" src="../../../assets/icons/lightbulb.svg" height="28px"
                         width="28px"></a>
 
-                <a href=""><img class="noteimg" type="image" src="../../../assets/icons/notification.png" height="28px"
+                <a routerLink="."><img class="noteimg" type="image" src="../../../assets/icons/notification.png" height="28px"
                         width="28px"> </a>
 
-                <a href=""><img class="noteimg" type="image" src="../../../assets/icons/edit.svg" height="28px"
+                <a routerLink="." ><img class="noteimg" type="image" src="../../../assets/icons/edit.svg" height="28px"
                         width="28px"> </a>
 
-                <a href="javascript:void(0)" routerLink="/archieve"><img class="noteimg" type="image" src="../../../assets/icons/archive.svg" height="28px"
+                <a  routerLink="./archieve"><img class="noteimg" type="image" src="../../../assets/icons/archive.svg" height="28px"
                         width="28px"> </a>
 
-                <a href="javascript:void(0)" routerLink="/trash"><img class="noteimg" type="image" src="../../../assets/icons/delete.svg" height="28px"
+                <a  routerLink="./trash" ><img class="noteimg" type="image" src="../../../assets/icons/delete.svg" height="28px"
                         width="28px"> </a>
             </div>
             <mat-sidenav-container class="sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
@@ -59,11 +62,11 @@
                     <mat-nav-list>
 
                         <mat-list role="list">
-                            <mat-list-item role="listitem"> Notes</mat-list-item>
+                            <mat-list-item role="listitem" routerLink="./notes"> Notes</mat-list-item>
                             <mat-list-item role="listitem">reminder</mat-list-item>
                             <mat-list-item role="listitem">edit</mat-list-item>
-                            <mat-list-item role="listitem">archive</mat-list-item>
-                            <mat-list-item role="listitem">trash</mat-list-item>
+                            <mat-list-item role="listitem" routerLink="./archieve" >archive</mat-list-item>
+                            <mat-list-item role="listitem" routerLink="./trash" >trash</mat-list-item>
                         </mat-list>
                     </mat-nav-list>
                 </mat-sidenav>

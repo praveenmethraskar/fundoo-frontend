@@ -3,13 +3,13 @@
     <a href="javascript:void(0)"><img src="../../../assets/icons/reminder.svg" alt="" height="20px"></a>
     <a href="javascript:void(0)"><img src="../../../assets/icons/collabrator.svg" alt="" height="20px"></a>
     <a href="javascript:void(0)" mat-icon-button [matMenuTriggerFor]="menu"><img
-        src="../../../assets/icons/backgrouncolor.svg" alt="" style="margin-top: -15px;" height="20px"></a>
+        src="../../../assets/icons/backgrouncolor.svg" alt="" style="margin-top: -20px" height="20px"></a>
 
    
       <mat-menu #menu="matMenu">
         <div class="horiz">
           <div *ngFor="let color of colors" >
-            <button mat-menu-item [style.background]="color?.code" (click)="setColor(color.code)"></button>
+            <button  mat-mini-fab [style.background]="color?.name" (click)="setColor(color.name)"></button>
           </div>
         </div>
         

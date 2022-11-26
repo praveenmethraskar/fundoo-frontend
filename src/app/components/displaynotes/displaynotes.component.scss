@@ -76,6 +76,32 @@ mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([ar
   justify-content: flex-start;
 
 }
+@media screen and (min-width: 300px) and (max-width: 500px) {
+  .container-box{
+    display: flex;
+    flex-direction: column!important;
+   
+    margin-top: 98px;
+
+  }
+
+  .takeAnote {
+    margin: auto;
+    box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+    border-radius: 8px;
+    background: #fff;
+    margin: 20px;
+    /* padding: 5px 5px 5px 5px; */
+    width: 64%;
+}
+
+}
+.takeAnote .icons{
+visibility: hidden;
+}
+.takeAnote:hover .icons{
+  visibility:inherit;
+}
  /* Column Gap */
  .container-box > * {
   box-sizing: border-box;
@@ -151,6 +177,6 @@ textarea {
     .titleImgSection a {
        display: none;
     }
-    .takeAnote {width: 85%;}
     .closebutton {padding-top: 10px;}
+
 }

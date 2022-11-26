@@ -1,5 +1,5 @@
-<app-notes></app-notes>
+<app-notes (displaytogetallnotes)="receiveMessagefromdisplaycard($event)"></app-notes>
 <div>
-    <app-displaynotes [NotesList]="notesArray"></app-displaynotes>
+    <app-displaynotes [NotesList]="notesArray" (displaytogetallnotes)="receiveMessagefromdisplaycard($event)" ></app-displaynotes>
 </div>
  

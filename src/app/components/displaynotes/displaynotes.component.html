@@ -3,7 +3,7 @@
     <div fxLayout="row" class="container-box" fxLayoutGap=”32px”>
         <div class="takeAnote cardListItem" *ngFor="let notes of NotesList" [style.background]="notes.color">
             <div appearance="fill" (click)="openDialog(notes)"  >
-                <a href="#"> <img src="../../../assets/icons/pin.svg"
+                <a href="#" class="icons"> <img src="../../../assets/icons/pin.svg"
                         style="float: right;margin-top: 10px;margin-right: 10px;"> </a>
                 <!-- <textarea matInput placeholder="Take a note" class="noteDescription"></textarea> -->
                 <div class="noteDescription">
@@ -11,8 +11,9 @@
                     <p> {{notes.desciption}}</p>
                 </div>
             </div>
-            <app-icons [notesCard]="notes"></app-icons>
+            <app-icons [notesCard]="notes" class="icons" (iconstodisplay)="recievefromiconstodisplaycard($event)"></app-icons>
         </div>
     </div>
 </div>
 
+ 
