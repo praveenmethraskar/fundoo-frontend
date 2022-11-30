@@ -1,7 +1,12 @@
 import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { NoteserviceService } from 'src/app/services/notesServices/noteservice.service';
+import { ArchieveComponent } from '../../archieve/archieve/archieve.component';
+import { DisplaynotesComponent } from '../../displaynotes/displaynotes.component';
+import { TrashComponent } from '../../trash/trash/trash.component';
 
 @Component({
   selector: 'app-icons',
@@ -14,12 +19,24 @@ export class IconsComponent implements OnInit {
   @Output() iconstodisplay = new EventEmitter<string>()
   data: any;
   noteid: any;
-  isArchived: boolean = false;
+  istrash: boolean = false;
+  isarchieve:boolean=false;
 
-
-  constructor(public notes: NoteserviceService, private snackbar:MatSnackBar) { }
+  constructor(public notes: NoteserviceService, private snackbar:MatSnackBar, private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    let comp = this.route.snapshot.component;
+    if(comp == DisplaynotesComponent){
+
+    }
+    if(comp == TrashComponent)
+    {
+      this.istrash = true;
+    }
+    if(comp == ArchieveComponent)
+    {
+      this.isarchieve = true;
+    }
   }
 
   colors: Array<any> = [
@@ -66,6 +83,19 @@ export class IconsComponent implements OnInit {
     })
      this.snackbar.open("note is in trash",'',{duration: 3000});
   }
+  untrash() {
+    let data = {
+      noteId: [this.notesCard.noteid],
+      //noteId:this.noteid,
+    }
+    console.log(data);
+    this.notes.trashnotes(data).subscribe((response: any) => {
+      console.log(response);
+      this.iconstodisplay.emit(response);
+      
+    })
+     this.snackbar.open("note is in restored",'',{duration: 3000});
+  }
   archieve() {
     let data = {
       noteId: [this.notesCard.noteid]
@@ -76,6 +106,29 @@ export class IconsComponent implements OnInit {
       this.iconstodisplay.emit(response);
     })
     this.snackbar.open("note is in archieve",'',{duration: 3000});
+  }
+  unarchieve(){
+    let data = {
+      noteId: [this.notesCard.noteid]
+    }
+    console.log(data);
+    this.notes.archievenote(data).subscribe((response: any) => {
+      console.log(response);
+      this.iconstodisplay.emit(response);
+    })
+    this.snackbar.open("note is in Unarchieve",'',{duration: 3000});
+  }
+
+  delete() {
+    let data = {
+      noteId: [this.notesCard.noteid]
+    }
+    console.log(data);
+    this.notes.deletenote(data).subscribe((response: any) => {
+      console.log(response);
+      this.iconstodisplay.emit(response);
+    })
+    this.snackbar.open("note is in deleted permanently",'',{duration: 3000});
   }
 
 

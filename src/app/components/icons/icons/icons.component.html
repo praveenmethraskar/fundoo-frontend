@@ -1,26 +1,24 @@
 <div style="display: flex;" cdkMenuBar>
   <div class="iconimg4">
-    <a href="javascript:void(0)"><img src="../../../assets/icons/reminder.svg"  alt="" height="20px"></a>
-    <a href="javascript:void(0)"><img src="../../../assets/icons/collabrator.svg" alt="" height="20px"></a>
-    <a href="javascript:void(0)" mat-icon-button [matMenuTriggerFor]="menu" > <img
-        src="../../../assets/icons/backgrouncolor.svg" alt="" style="margin-top: -20px" height="20px"></a>
-
-   
-      <mat-menu #menu="matMenu" >
-        <div class="horiz" >
-          <div *ngFor="let color of colors" >
-            <button  mat-mini-fab [style.background]="color?.name" (click)="setColor(color.name)"></button>
-          </div>
+    <a href="javascript:void(0)" (click)="unarchieve()"><img src="../../../assets/icons/unarchive.png" alt="" height="20px" *ngIf="!istrash && isarchieve"></a>
+    <a href="javascript:void(0)" (click)="delete()"><img src="../../../assets/icons/delete_forever.png" alt="" height="20px" *ngIf="!isarchieve && istrash"></a>
+    <a href="javascript:void(0)" (click)="untrash()"><img src="../../../assets/icons/restore.png" alt="" height="20px" *ngIf="!isarchieve && istrash"></a>
+    <a href="javascript:void(0)"><img src="../../../assets/icons/reminder.svg" alt="" height="20px" *ngIf="!isarchieve && !istrash"></a>
+    <a href="javascript:void(0)"><img src="../../../assets/icons/collabrator.svg" alt="" height="20px" *ngIf="!isarchieve && !istrash"> </a>
+    <a href="javascript:void(0)" mat-icon-button [matMenuTriggerFor]="menu"> <img
+        src="../../../assets/icons/backgrouncolor.svg" alt="" style="margin-top: -20px" height="20px" *ngIf="!isarchieve && !istrash"></a>
+    <mat-menu #menu="matMenu">
+      <div class="horiz">
+        <div *ngFor="let color of colors">
+          <button mat-mini-fab [style.background]="color?.name" (click)="setColor(color.name)" *ngIf="!isarchieve && !istrash"></button>
         </div>
-        
-      </mat-menu>
-   
-
-    <a href="javascript:void(0)"><img src="../../../assets/icons/image.svg" alt="" height="20px" *ngIf="archieve && trash"></a>
-    <a href="javascript:void(0)"  (click)="archieve()"><img src="../../../assets/icons/archive.svg" alt=""
-        height="20px"></a>
-    <a mat-icon-button cdkMenuItem [cdkMenuTriggerFor]="file"><img src="../../../assets/icons/more.svg" alt=""
-        height="20px" style="margin-top: -15px;"></a>
+      </div>
+    </mat-menu>
+    <a href="javascript:void(0)"><img src="../../../assets/icons/image.svg" alt="" height="20px" *ngIf="!isarchieve && !istrash"></a>
+    <a href="javascript:void(0)" (click)="archieve()"><img src="../../../assets/icons/archive.svg" alt="" height="20px" *ngIf="!istrash && !isarchieve "></a>
+    
+    <a mat-icon-button cdkMenuItem [cdkMenuTriggerFor]="file"><img src="../../../assets/icons/more.svg" alt="" height="20px"
+       style="margin-top: -15px;" *ngIf="!isarchieve && !istrash"></a>
     <ng-template #file>
       <div class="example-menu" cdkMenu>
         <button class="example-menu-item" (click)="trash()" cdkMenuItem>Delete Note</button>
@@ -30,4 +28,6 @@
       </div>
     </ng-template>
   </div>
+
+ 
 </div>

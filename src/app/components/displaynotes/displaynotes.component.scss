@@ -108,7 +108,7 @@ visibility:hidden;
   box-sizing: border-box;
 }
 .container-box > *:not(:last-child) {
-  margin-right: 32px;
+  margin-right: 0px;
 }
 .cardListItem {
   flex: 0 1 calc(20.3% - 32px);
