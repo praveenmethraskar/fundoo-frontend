@@ -1,5 +1,6 @@
 import { outputAst } from '@angular/compiler';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteserviceService } from 'src/app/services/notesServices/noteservice.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class IconsComponent implements OnInit {
   isArchived: boolean = false;
 
 
-  constructor(public notes: NoteserviceService) { }
+  constructor(public notes: NoteserviceService, private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
   }
@@ -49,6 +50,7 @@ export class IconsComponent implements OnInit {
     this.notes.changeColor(data).subscribe((response:any)=>{
       console.log(response);
     })
+    this.snackbar.open(color+" color changed",'',{duration: 3000});
   }
 
   trash() {
@@ -62,6 +64,7 @@ export class IconsComponent implements OnInit {
       this.iconstodisplay.emit(response);
       
     })
+     this.snackbar.open("note is in trash",'',{duration: 3000});
   }
   archieve() {
     let data = {
@@ -72,6 +75,7 @@ export class IconsComponent implements OnInit {
       console.log(response);
       this.iconstodisplay.emit(response);
     })
+    this.snackbar.open("note is in archieve",'',{duration: 3000});
   }
 
 

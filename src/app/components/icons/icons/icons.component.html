@@ -1,13 +1,13 @@
 <div style="display: flex;" cdkMenuBar>
   <div class="iconimg4">
-    <a href="javascript:void(0)"><img src="../../../assets/icons/reminder.svg" alt="" height="20px"></a>
+    <a href="javascript:void(0)"><img src="../../../assets/icons/reminder.svg"  alt="" height="20px"></a>
     <a href="javascript:void(0)"><img src="../../../assets/icons/collabrator.svg" alt="" height="20px"></a>
-    <a href="javascript:void(0)" mat-icon-button [matMenuTriggerFor]="menu"><img
+    <a href="javascript:void(0)" mat-icon-button [matMenuTriggerFor]="menu" > <img
         src="../../../assets/icons/backgrouncolor.svg" alt="" style="margin-top: -20px" height="20px"></a>
 
    
-      <mat-menu #menu="matMenu">
-        <div class="horiz">
+      <mat-menu #menu="matMenu" >
+        <div class="horiz" >
           <div *ngFor="let color of colors" >
             <button  mat-mini-fab [style.background]="color?.name" (click)="setColor(color.name)"></button>
           </div>
@@ -16,8 +16,8 @@
       </mat-menu>
    
 
-    <a href="javascript:void(0)"><img src="../../../assets/icons/image.svg" alt="" height="20px"></a>
-    <a href="javascript:void(0)" (click)="archieve()"><img src="../../../assets/icons/archive.svg" alt=""
+    <a href="javascript:void(0)"><img src="../../../assets/icons/image.svg" alt="" height="20px" *ngIf="archieve && trash"></a>
+    <a href="javascript:void(0)"  (click)="archieve()"><img src="../../../assets/icons/archive.svg" alt=""
         height="20px"></a>
     <a mat-icon-button cdkMenuItem [cdkMenuTriggerFor]="file"><img src="../../../assets/icons/more.svg" alt=""
         height="20px" style="margin-top: -15px;"></a>

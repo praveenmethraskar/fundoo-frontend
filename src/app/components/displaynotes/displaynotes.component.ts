@@ -2,6 +2,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { DataServiceService } from 'src/app/services/dataService/data-service.service';
 import { UpdateComponent } from '../update/update/update.component';
 
 @Component({
@@ -21,9 +22,11 @@ export class DisplaynotesComponent implements OnInit {
   title: any;
   description: any;
   msg: any;
- 
+  searchword: any;
+  subscription: any;
+  message: any;
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog,private data:DataServiceService) { }
 
 
   @Input() NotesList: any;
@@ -31,7 +34,14 @@ export class DisplaynotesComponent implements OnInit {
   
 
   ngOnInit(): void {
+    this.data.searchNote.subscribe((message:any )=> {
+      this.message = message;
+      console.log(message.data[0]);
+      this.searchword = message.data[0]
+    });
+   
   }
+
 
   openDialog(notes: any) {
     const dialogReff = this.dialog.open(UpdateComponent, {

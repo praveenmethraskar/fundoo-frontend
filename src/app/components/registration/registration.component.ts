@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { UserService } from 'src/app/services/userServices/user.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class RegistrationComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
   
-  constructor(private formBuilder: FormBuilder, private user:UserService) { }
+  constructor(private formBuilder: FormBuilder, private user:UserService,private snackbar:MatSnackBar) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -43,6 +44,7 @@ onSubmit() {
       this.user.Registration(payload).subscribe((response:any) =>{
         console.log(response);
       })
+      let snackbar = this.snackbar.open("Registration Successful",'',{duration: 3000});
     }
 }
 

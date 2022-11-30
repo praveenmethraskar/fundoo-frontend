@@ -38,7 +38,8 @@ import {FormsModule} from '@angular/forms';
 import { TrashComponent } from './components/trash/trash/trash.component';
 import { ArchieveComponent } from './components/archieve/archieve/archieve.component';
 import {CdkMenuModule} from '@angular/cdk/menu';
-
+import { FilterpipePipe } from './pipes/filterpipe.pipe';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import {CdkMenuModule} from '@angular/cdk/menu';
     UpdateComponent,
     TrashComponent,
     ArchieveComponent,
+    FilterpipePipe,
     
   ],
   imports: [
@@ -78,7 +80,8 @@ import {CdkMenuModule} from '@angular/cdk/menu';
     MatMenuModule,
     MatDialogModule,
     FormsModule,
-    CdkMenuModule
+    CdkMenuModule,
+    MatSnackBarModule
     
   ],
   providers: [

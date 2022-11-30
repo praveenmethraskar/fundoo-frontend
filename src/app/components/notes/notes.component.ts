@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NoteserviceService } from 'src/app/services/notesServices/noteservice.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class NotesComponent implements OnInit {
 
   token:any;
 
-  constructor(private formBuilder: FormBuilder, private notes:NoteserviceService) { 
+  constructor(private formBuilder: FormBuilder, private notes:NoteserviceService, private snackbar:MatSnackBar) { 
     this.token = localStorage.getItem('token');
   }
   @Output() displaytogetallnotes=new EventEmitter<string>();
@@ -48,6 +49,7 @@ export class NotesComponent implements OnInit {
         console.log(response);
         this.displaytogetallnotes.emit(response)
       })
+      this.snackbar.open("notes created",'',{duration: 3000});
     }
 
     console.log("hiding the description")

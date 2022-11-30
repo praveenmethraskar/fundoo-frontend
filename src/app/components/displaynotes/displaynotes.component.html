@@ -1,7 +1,7 @@
 <div fxFlex=100 fxLayout="row wrap"  fxLayoutAlign="center center">
 
     <div fxLayout="row" class="container-box" fxLayoutGap=”32px”>
-        <div class="takeAnote cardListItem" *ngFor="let notes of NotesList" [style.background]="notes.color">
+        <div class="takeAnote cardListItem" *ngFor="let notes of NotesList | filterpipe:searchword" [style.background]="notes.color">
             <div appearance="fill" (click)="openDialog(notes)"  >
                 <a href="#" class="icons"> <img src="../../../assets/icons/pin.svg"
                         style="float: right;margin-top: 10px;margin-right: 10px;"> </a>
@@ -11,7 +11,7 @@
                     <p> {{notes.desciption}}</p>
                 </div>
             </div>
-            <app-icons [notesCard]="notes" class="icons" (iconstodisplay)="recievefromiconstodisplaycard($event)"></app-icons>
+            <app-icons [notesCard]="notes" class="icons" (iconstodisplay)="recievefromiconstodisplaycard($event)" ></app-icons>
         </div>
     </div>
 </div>

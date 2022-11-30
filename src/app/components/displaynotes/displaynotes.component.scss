@@ -74,7 +74,7 @@ mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([ar
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-
+  margin-left: 100px;
 }
 @media screen and (min-width: 300px) and (max-width: 500px) {
   .container-box{
@@ -97,11 +97,12 @@ mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:hover:not([ar
 
 }
 .takeAnote .icons{
-visibility: hidden;
+visibility:hidden;
 }
 .takeAnote:hover .icons{
-  visibility:inherit;
+  visibility:visible;
 }
+
  /* Column Gap */
  .container-box > * {
   box-sizing: border-box;
@@ -117,7 +118,7 @@ visibility: hidden;
   box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
   border-radius: 8px;
   background: #fff;
-  margin: 40px;
+  margin: 20px;
   padding: 5px 5px 5px 5px;
 }
 .takeAnote textarea { width: 100%; }
